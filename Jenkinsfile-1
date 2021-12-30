@@ -1,18 +1,16 @@
 node('MACOS') {
-  stages {
-      stage('clean') {
-        cleanWs()
+  stage('clean') {
+    cleanWs()
+  }
+  stage('Hello') {
+    steps {
+        sh '''
+          ansible --version
+          ansible-playbook --version
+          ansible-galaxy --version
+        '''
       }
-      stage('Hello') {
-        steps {
-            sh '''
-              ansible --version
-              ansible-playbook --version
-              ansible-galaxy --version
-            '''
-          }
-      }
-    }
+  }
 }
 
   
