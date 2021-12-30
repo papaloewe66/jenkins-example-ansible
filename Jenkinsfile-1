@@ -3,7 +3,7 @@ node('MACOS') {
     cleanWs()
   }
   stage('Hello') {
-      dir('usrlocal/bin') {
+      dir('/usr/local/bin') {
         sh '''
           ansible --version
           ansible-playbook --version
