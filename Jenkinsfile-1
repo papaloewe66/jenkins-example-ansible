@@ -6,7 +6,7 @@ node('MACOS') {
       dir('/usr/local/bin') {
         pwd
         echo 'hallo'
-        sh 'ansible --version'
+        sh 'ls'
       }
   }
 }
