@@ -1,17 +1,18 @@
-pipeline {
-  agent any
-
+node('MACOS') {
   stages {
-    stage('Hello') {
-      steps {
-        dir('/usr/local/bin') {
-          sh '''
-            ansible --version
-            ansible-playbook --version
-            ansible-galaxy --version
-          '''
-        }
+      stage('clean') {
+        cleanWs()
+      }
+      stage('Hello') {
+        steps {
+            sh '''
+              ansible --version
+              ansible-playbook --version
+              ansible-galaxy --version
+            '''
+          }
       }
     }
-  }
 }
+
+  
