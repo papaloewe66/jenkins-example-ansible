@@ -4,11 +4,13 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh '''
-          ansible --version
-          ansible-playbook --version
-          ansible-galaxy --version
-        '''
+        dir(/usr/local/bin) {
+          sh '''
+            ansible --version
+            ansible-playbook --version
+            ansible-galaxy --version
+          '''
+        }
       }
     }
   }
