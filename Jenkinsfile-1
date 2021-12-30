@@ -4,11 +4,9 @@ node('MACOS') {
   }
   stage('Hello') {
       dir('/usr/local/bin') {
-        sh '''
-          ansible --version
-          ansible-playbook --version
-          ansible-galaxy --version
-        '''
+        pwd
+        echo 'hallo'
+        sh 'ansible --version'
       }
   }
 }
